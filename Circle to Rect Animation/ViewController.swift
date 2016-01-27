@@ -15,7 +15,7 @@ class ViewController: UIViewController {
     let cornerRadiusUndoAnim = CABasicAnimation(keyPath: "cornerRadius") // the corner radius increasing animation
     let widthAnim = CABasicAnimation(keyPath: "bounds.size.width") // the width animation
     let animDuration = NSTimeInterval(1.0) // the duration of one 'segment' of the animation
-    let layerSize = CGFloat(100) // the width & height of the layer
+    let layerSize = CGFloat(100) // the width & height of the layer (when it's a square)
 
     
     override func viewDidLoad() {
@@ -44,7 +44,7 @@ class ViewController: UIViewController {
         widthAnim.fromValue = animLayer.frame.size.width
         widthAnim.toValue = rect.size.width
         widthAnim.autoreverses = true
-        widthAnim.delegate = self
+        widthAnim.delegate = self // so that we get notified when the width animation finishes
         
     }
     
