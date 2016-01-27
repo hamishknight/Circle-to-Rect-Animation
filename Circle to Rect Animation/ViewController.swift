@@ -33,16 +33,21 @@ class ViewController: UIViewController {
         cornerRadiusAnim.duration = animDuration
         cornerRadiusAnim.fromValue = animLayer.cornerRadius
         cornerRadiusAnim.toValue = 0;
+        cornerRadiusAnim.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseIn) // timing function to make it look nice
+
         
         // inverse of the cornerRadiusAnim
         cornerRadiusUndoAnim.duration = animDuration
         cornerRadiusUndoAnim.fromValue = 0;
         cornerRadiusUndoAnim.toValue = animLayer.cornerRadius
+        cornerRadiusUndoAnim.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut) // timing function to make it look nice
+
         
         // increases the width, and autoreverses on completion
         widthAnim.duration = animDuration
         widthAnim.fromValue = animLayer.frame.size.width
         widthAnim.toValue = rect.size.width
+        widthAnim.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut) // timing function to make it look nice
         widthAnim.autoreverses = true
         widthAnim.delegate = self // so that we get notified when the width animation finishes
         
