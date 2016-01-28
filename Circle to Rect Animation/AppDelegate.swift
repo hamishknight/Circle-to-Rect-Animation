@@ -15,7 +15,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+
+        window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        window?.rootViewController = ViewController2() // replace with ViewController for staged animation
+        window?.makeKeyAndVisible()
+        
         return true
     }
 
