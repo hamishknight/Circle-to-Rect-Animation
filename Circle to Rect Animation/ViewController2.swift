@@ -36,7 +36,7 @@ class ViewController2: UIViewController {
         cornerRadiusAnim.duration = animDuration
         cornerRadiusAnim.fromValue = animLayer.cornerRadius
         cornerRadiusAnim.toValue = 0;
-        cornerRadiusAnim.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut) // timing function to make it look nice
+        cornerRadiusAnim.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut) // timing function to make it look nice
         
         // increases the width, and autoreverses on completion
         widthAnim.duration = animDuration
